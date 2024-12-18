@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestSuite" thread-count="3" parallel="methods" >
+<test name="test demo2">
+<classes>
+	
+ <class name="TestNGAnnotations.SeleniumTestNG3">
+  <!--<include value="launchGoogle" dependsOnMethods="openBrowser"/>
+  <include value="LogOut"/>-->
+ </class>
+ 
+</classes>
+</test>
+</suite>
