@@ -1,11 +1,11 @@
-Feature: Login functionality
-  I want to use this to check the loin functionality for ServiceNow
+Feature: Login functionlity
+  I want to use this to check the loin functionlity for ServiceNow
 
 Background: 
 		Given User opens the application
 		  
 Scenario Outline: validate user is able to login
-  When User enters "<Username>" and "<Password>"
+  When User enters username and password
   And User clicks on the submit button
   Then User lands to homepage
 	And User fills Requestor Information
@@ -21,9 +21,9 @@ Scenario Outline: validate user is able to login
     
 Examples:
 
-	| Username| Password | Catalog |
-	| MKumar6 | Default@1234 | Access to a public folder |
-	|VSharma4| vikasH@6972 | Access to Network |
-	|MKumar6| Default@1234 | ATS Printer - Move-Add-Change Request |
-	|MKumar6| Default@1234 | DataCenter Operations/Maintenance |
+	| Catalog |
+	| Access to a public folder |
+ 	| Access to Network |
+ 	| ATS Printer - Move-Add-Change Request |
+	| DataCenter Operations/Maintenance |
 	

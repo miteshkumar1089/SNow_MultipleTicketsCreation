@@ -32,7 +32,7 @@ public class LoginPage {
 	public void fillingLoginDetails(String userID, String passwd) throws IOException 
 	{
 		driver.findElement(userName).sendKeys(userID);
-		test.log(LogStatus.INFO,"User passing their credentials");
+	//	test.log(LogStatus.INFO,"User passing their credentials");
 		driver.findElement(password).sendKeys(passwd);
 		driver.findElement(submitButton).click();
 		driver.get(propObj.readFromPropertiesFile("CreateIncidentRequestedItemUrl"));

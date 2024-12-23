@@ -40,19 +40,19 @@ public class login {
 	    
 	}
 
-//	@When("User enters username and password")
-//	public void user_enters_username_and_password() throws IOException {
-//		login=new LoginPage(Hooks.driver);
-//		login.fillingLoginDetails("Mkumar6", "Default@1234");
-//
-//	}
-	
-	@When("^User enters \"([^\"]*)\" and \"([^\"]*)\"$")
-    public void user_enters_credentials(String username, String password) throws IOException {
+	@When("User enters username and password")
+	public void user_enters_username_and_password() throws IOException {
 		login=new LoginPage(Hooks.driver);
-		login.fillingLoginDetails(username, password);
+		login.fillingLoginDetails(propObj.readFromPropertiesFile("username"), propObj.readFromPropertiesFile("password"));
+
+	}
+	
+//	@When("^User enters \"([^\"]*)\" and \"([^\"]*)\"$")
+//    public void user_enters_credentials(String username, String password) throws IOException {
+//		login=new LoginPage(Hooks.driver);
+//		login.fillingLoginDetails(username, password);
     
-    }
+//    }
 
 	@And("User clicks on the submit button")
 	public void user_clicks_on_the_submit_button() {

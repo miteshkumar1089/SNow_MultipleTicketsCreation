@@ -12,7 +12,7 @@ public class ExcelDataProvider {
 	
     @DataProvider(name = "excelData")
     public Object[][] getDataFromExcel() throws IOException {
-        String excelFilePath = "E://SeleniumSnowUpdatedScript//src//main//resources//data//excelData.xlsx";
+        String excelFilePath = "C://Users//miteshkumar//IdeaProjects//SNow_MultipleTicketsCreation//src//main//resources//data//excelData.xlsx";
         FileInputStream fileInputStream = new FileInputStream(excelFilePath);
         Workbook workbook = new XSSFWorkbook(fileInputStream);
         Sheet sheet = workbook.getSheetAt(0);

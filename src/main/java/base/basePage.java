@@ -52,9 +52,7 @@ public class basePage {
 			driver = new ChromeDriver(options);
 			driver.manage().window().maximize();
 		}
-
 		extent = ExtentManager.getInstance("reports//Extent_demo.html");
-
 
 		driver.get(propObj.readFromPropertiesFile("url"));
 	}
