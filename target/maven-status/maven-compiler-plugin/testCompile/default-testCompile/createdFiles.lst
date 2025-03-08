@@ -1,0 +1,14 @@
+testCases\loginPage.class
+testCases\orderGuideFirstPage.class
+testCases\others\techApplication.class
+testCases\submittedTicketPage.class
+StepDefinition\inactiveCatalogTestRunner.class
+testCases\orderGuideNextPage.class
+testCases\others\inactiveCatalogValidate.class
+StepDefinition\inactiveCatalogItem.class
+StepDefinition\specificsForm.class
+testCases\specificFormCreateTicket.class
+StepDefinition\createTicket.class
+StepDefinition\login.class
+StepDefinition\loginTestRunner.class
+StepDefinition\multipleTicketCreationTestRunner.class

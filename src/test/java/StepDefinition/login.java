@@ -25,34 +25,14 @@ public class login {
 	
 	@Given("User opens the application")
 	public void user_opens_the_application() throws IOException {
-		
-//		String browser = propObj.readFromPropertiesFile("browser");
-//		WebDriverManager.chromedriver().setup();
-//		// Setting  options to false so it will run without headless mode
-//		// If we make it true then it will run the test code in headless mode
-//		ChromeOptions options = new ChromeOptions();
-//		options.addArguments("--remote-allow-origins=*");
-//		//options.setHeadless(false);
-//		driver = new ChromeDriver(options);
-//		driver.manage().window().maximize();
-//		
-//		driver.get(propObj.readFromPropertiesFile("url"));
-	    
-	}
 
+	}
 	@When("User enters username and password")
 	public void user_enters_username_and_password() throws IOException {
 		login=new LoginPage(Hooks.driver);
 		login.fillingLoginDetails(propObj.readFromPropertiesFile("username"), propObj.readFromPropertiesFile("password"));
 
 	}
-	
-//	@When("^User enters \"([^\"]*)\" and \"([^\"]*)\"$")
-//    public void user_enters_credentials(String username, String password) throws IOException {
-//		login=new LoginPage(Hooks.driver);
-//		login.fillingLoginDetails(username, password);
-    
-//    }
 
 	@And("User clicks on the submit button")
 	public void user_clicks_on_the_submit_button() {

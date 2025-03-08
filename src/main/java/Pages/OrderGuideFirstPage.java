@@ -34,6 +34,10 @@ public class OrderGuideFirstPage {
 	public static By serviceGrp = By.xpath("(//div[@class='input-group']//child::input)[11]");
 	public static By category = By.xpath("(//div[@class='input-group']//child::input)[12]");
 	public static By nextButton = By.cssSelector("#next_page_footer");
+	public static By techApplicationFlag= By.xpath("//span[@id='status.IO:36ea09571b4b3050e1e66426624bcb3b']");
+	public static By techAppVal= By.xpath("//input[@id='sys_display.IO:36ea09571b4b3050e1e66426624bcb3b']");
+	public static By techAppField= By.xpath("//input[@id='sys_display.IO:36ea09571b4b3050e1e66426624bcb3b']");
+	public static By areaOfSupportField= By.xpath("//select[@name='IO:91e9066f87eba05053e97778cebb3515']");
 
 	// Find attribute and css value of Issue details option
 	
@@ -43,7 +47,6 @@ public class OrderGuideFirstPage {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds((10)));
         
 	}
-
 	public String issueDetailsCSSValue() {
 
 		String cssV = driver.findElement(issueDetails).getCssValue("background-color");
@@ -51,7 +54,6 @@ public class OrderGuideFirstPage {
 		return cssV;
 
 	}
-
 	public String issueDetailsAttributeValue() {
 
 		String cssV1 = driver.findElement(issueDetails).getAttribute("aria-hidden");
@@ -60,16 +62,13 @@ public class OrderGuideFirstPage {
 	}
 
 	// Add Requestor
-
 	public void getRequestor(String user) {
 
 		driver.findElement(requestor).sendKeys(user);
 		driver.findElement(requestor).sendKeys(Keys.ENTER);
 
 	}
-
 	// Add Multilingual Support Required
-
 	public void getMultilingual(String langChoice, String preferredLangChoice) throws InterruptedException {
 
 		Thread.sleep(2000);
@@ -172,6 +171,29 @@ public class OrderGuideFirstPage {
 
 	//}
 
+//	------
+
+	public String getTechAppFlag() throws InterruptedException {
+
+		return driver.findElement(techApplicationFlag).getAttribute("mandatory");
+
+	}
+	public String getTechAppValue() throws InterruptedException {
+
+		return driver.findElement(techAppVal).getAttribute("value");
+
+	}
+	public WebElement techAppField() throws InterruptedException {
+
+		return driver.findElement(techAppField);
+
+	}
+
+	public WebElement setAreaOfSupportValue() throws InterruptedException {
+
+		return driver.findElement(areaOfSupportField);
+
+	}
 	// Click on Next button
 
 	public void clickNextButton() throws InterruptedException {

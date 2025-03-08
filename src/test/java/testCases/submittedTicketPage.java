@@ -25,16 +25,14 @@ public class submittedTicketPage extends basePage{
 	
 	@Test(dataProvider = "excelData", dataProviderClass = ExcelDataProvider.class)
 	public void validatingUserIsAbleToFillDetailsAndSubmitInOrderGuideNextPage(String catalogSearch) throws IOException, InterruptedException {
-		
+		test.log(LogStatus.INFO,"Ticket created for catalog item " + catalogSearch);
 		ticketPage= new SubmittedTicketPage(driver);
 		ogNextPage=new orderGuideNextPage();
 		ogNextPage.validatingUserIsAbleToFillDetailsAndSubmitInOrderGuideNextPage(catalogSearch);
-		test.log(LogStatus.INFO,"Validating the testcases");
 		String ticketNumber= ticketPage.getTicketNumber();
 		System.out.println(ticketNumber);
 		test.log(LogStatus.INFO,ticketNumber);
 	}
-	
 
 }
 

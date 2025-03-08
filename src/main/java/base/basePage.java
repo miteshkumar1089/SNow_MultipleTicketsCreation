@@ -27,7 +27,6 @@ public class basePage {
 	ReadingPropertiesFile propObj = new ReadingPropertiesFile();
 
 	public static DataFactory data = new DataFactory();
-
 	public static ExtentReports extent;
 	public static ExtentTest test;
 

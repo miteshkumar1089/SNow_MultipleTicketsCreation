@@ -10,7 +10,6 @@ Background:
   Scenario Outline: validate catalog item is marked inactive
     When User opens Maintain items table
     And User enters "<Catalog>" item in Action/Name field
-    And User clicks and open catalog item form view
     Then User validates if Active checkbox is unchecked
 
     Examples:

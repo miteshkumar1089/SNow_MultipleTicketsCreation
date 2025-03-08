@@ -3,7 +3,8 @@
 <suite name="Suite">
   <test thread-count="5" name="Test Parameter">
     <classes>
-      <class name="TestNGAnnotations.SeleniumTestNGParameters"/>
+      <class name="testCases.submittedTicketPage">
+      </class>
     </classes>
   </test> <!-- Test Parameter -->
 </suite> <!-- Suite -->

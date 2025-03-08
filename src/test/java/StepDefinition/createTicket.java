@@ -1,5 +1,8 @@
 package StepDefinition;
 
+import Utilities.DataFactory;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.WebDriver;
 
 import Pages.OrderGuideFirstPage;
@@ -13,6 +16,10 @@ public class createTicket {
 	OrderGuideFirstPage ogFirstPage;
 	OrderGuideNextPage ogNextPage;
 	SubmittedTicketPage ticketNumber;
+
+	public static DataFactory data = new DataFactory();
+
+	ExtentTest test = Hooks.test;  // Get ExtentTest instance from Hooks
 	@Then("User fills Requestor Information")
 	public void user_fills_requestor_information() {
 		
@@ -56,22 +63,20 @@ public class createTicket {
 		ogFirstPage.addDescription("First Test Case");
 		
 	}
-//	@And("^User enters \"([^\"]*)\" item$")
-//	public void user_enters_catalog_item(String catalogSearch) {
-//		
-//		ogFirstPage=new OrderGuideFirstPage(Hooks.driver);
-//		ogFirstPage.getCatalog(catalogSearch);
-//	}
+
 	@And("^User enters \"([^\"]*)\" item$")
     public void user_enters_catalog_item(String catalogItem) throws InterruptedException {
+
 		ogFirstPage=new OrderGuideFirstPage(Hooks.driver);
 		ogFirstPage.getCatalog(catalogItem);
+		data.currentCatalogItemName=catalogItem;
 	}
 	@And("User clicks on Next button")
 	public void user_clicks_on_next_button() throws InterruptedException {
 		
 		ogFirstPage=new OrderGuideFirstPage(Hooks.driver);
 		ogFirstPage.clickNextButton();
+		Thread.sleep(5000);
 	}
 	@And("User clicks on Save & Submit button")
 	public void user_clicks_on_save_submit_button() {
@@ -83,8 +88,8 @@ public class createTicket {
 	public void user_gets_the_ticket_number() {
 		ticketNumber= new SubmittedTicketPage(Hooks.driver);
 		System.out.println(ticketNumber.getTicketNumber());
-		
+		test.log(LogStatus.INFO,"Ticket number: " + ticketNumber.getTicketNumber());
+		test.log(LogStatus.INFO,"Ticket created for catalog item: " + data.currentCatalogItemName);
 	}
-
 
 }
